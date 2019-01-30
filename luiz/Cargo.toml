@@ -1,0 +1,35 @@
+[package]
+name = "bioinformatics_algorithms"
+version = "0.1.0"
+authors = ["Luiz Irber <contact@luizirber.org>"]
+edition = "2018"
+
+[[bin]]
+name = "ba1a"
+path = "src/ba1a.rs"
+
+[[bin]]
+name = "ba1b"
+path = "src/ba1b.rs"
+
+[[bin]]
+name = "ba1c"
+path = "src/ba1c.rs"
+
+[[bin]]
+name = "ba1d"
+path = "src/ba1d.rs"
+
+[[bin]]
+name = "ba1e"
+path = "src/ba1e.rs"
+
+[[bin]]
+name = "ba1f"
+path = "src/ba1f.rs"
+
+[[bin]]
+name = "ba1g"
+path = "src/ba1g.rs"
+
+[dependencies]
