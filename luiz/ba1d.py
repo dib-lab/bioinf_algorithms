@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 
-def pattern_count(text, pattern):
+def approximate_pattern_match(text, pattern):
     matches = []
     for i in range(len(text) - len(pattern)):
         if text[i : i + len(pattern)] == pattern:
@@ -9,11 +9,11 @@ def pattern_count(text, pattern):
     return matches
 
 
-assert pattern_count("GATATATGCATATACTT", "ATAT") == [1, 3, 9]
+assert approximate_pattern_match("GATATATGCATATACTT", "ATAT") == [1, 3, 9]
 
 
 if __name__ == "__main__":
     with open("data/rosalind_ba1d.txt", "r") as dataset:
         pattern = dataset.readline().rstrip()
         text = dataset.readline().rstrip()
-    print(*pattern_count(text, pattern), sep=" ")
+    print(*approximate_pattern_match(text, pattern), sep=" ")

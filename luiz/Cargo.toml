@@ -32,4 +32,12 @@ path = "src/ba1f.rs"
 name = "ba1g"
 path = "src/ba1g.rs"
 
+[[bin]]
+name = "ba1h"
+path = "src/ba1h.rs"
+
+[[bin]]
+name = "ba1i"
+path = "src/ba1i.rs"
+
 [dependencies]
