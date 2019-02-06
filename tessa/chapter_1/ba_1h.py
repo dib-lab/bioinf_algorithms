@@ -14,7 +14,7 @@ def find_fuzzy_pattern(genome, pattern, num_mismatch):
     pattern_starts = []
     for p_start in range(len(genome) - len(pattern) +1):
         kmer = genome[p_start: p_start + len(pattern)]
-        if kmer == pattern:
+        if kmer == pattern: # not really necessary(hamming dist gets this case) but maybe faster?
             pattern_starts+=[p_start]
         elif hamming_distance(pattern, kmer) <= num_mismatch:
             pattern_starts+=[p_start]
