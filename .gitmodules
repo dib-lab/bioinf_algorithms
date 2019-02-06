@@ -1,0 +1,3 @@
+[submodule "charles"]
+	path = charles
+	url = https://github.com/charlesreid1/go-rosalind.git
