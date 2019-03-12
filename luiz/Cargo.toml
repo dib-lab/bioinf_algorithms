@@ -51,4 +51,9 @@ path = "src/ba1j.rs"
 name = "ba2a"
 path = "src/ba2a.rs"
 
+# Commented out until the product iter is properly implemented
+#[[bin]]
+#name = "ba2b"
+#path = "src/ba2b.rs"
+
 [dependencies]
