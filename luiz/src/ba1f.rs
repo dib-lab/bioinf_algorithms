@@ -29,7 +29,7 @@ pub fn minimum_skew(text: &[u8]) -> Vec<usize> {
         })
         .count();
 
-    return mins;
+    mins
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -45,7 +45,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     for pos in minimum_skew(text.as_bytes()) {
         print!("{} ", pos);
     }
-    println!("");
+    println!();
 
     Ok(())
 }

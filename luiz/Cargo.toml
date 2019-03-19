@@ -4,6 +4,9 @@ version = "0.1.0"
 authors = ["Luiz Irber <contact@luizirber.org>"]
 edition = "2018"
 
+[lib]
+name = "bioinformatics_algorithms"
+
 [[bin]]
 name = "ba1a"
 path = "src/ba1a.rs"
@@ -39,5 +42,13 @@ path = "src/ba1h.rs"
 [[bin]]
 name = "ba1i"
 path = "src/ba1i.rs"
+
+[[bin]]
+name = "ba1j"
+path = "src/ba1j.rs"
+
+[[bin]]
+name = "ba2a"
+path = "src/ba2a.rs"
 
 [dependencies]

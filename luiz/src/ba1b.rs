@@ -39,7 +39,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     for word in frequent_words(text.as_bytes(), k) {
         print!("{} ", word);
     }
-    println!("");
+    println!();
 
     Ok(())
 }

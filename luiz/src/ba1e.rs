@@ -20,7 +20,7 @@ pub fn find_clumps(text: &[u8], ksize: usize, length: usize, times: usize) -> Ha
         })
         .count();
 
-    for i in 1..text.len() - length + 1 {
+    for i in 1..=text.len() - length {
         let prev_kmer = &text[i - 1..i + ksize - 1];
         let kmer = kmer_counts.entry(prev_kmer).or_insert(0);
         *kmer -= 1;
@@ -64,7 +64,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     for word in find_clumps(text.as_bytes(), k, l, t) {
         print!("{} ", word);
     }
-    println!("");
+    println!();
 
     Ok(())
 }
