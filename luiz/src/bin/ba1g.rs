@@ -10,9 +10,9 @@ pub fn hamming(seq1: &[u8], seq2: &[u8]) -> usize {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    assert_eq!(hamming(b"GGGCCGTTGGT", b"GGACCGTTGAC"), 3);
-
-    let input: String = env::args().nth(1).expect("Input data file missing");
+    let input: String = env::args()
+        .nth(1)
+        .unwrap_or("data/rosalind_ba1g.txt".into());
     let data = fs::read_to_string(input)?;
     let mut lines = data.lines();
 

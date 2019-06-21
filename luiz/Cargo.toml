@@ -7,53 +7,10 @@ edition = "2018"
 [lib]
 name = "bioinformatics_algorithms"
 
-[[bin]]
-name = "ba1a"
-path = "src/ba1a.rs"
-
-[[bin]]
-name = "ba1b"
-path = "src/ba1b.rs"
-
-[[bin]]
-name = "ba1c"
-path = "src/ba1c.rs"
-
-[[bin]]
-name = "ba1d"
-path = "src/ba1d.rs"
-
-[[bin]]
-name = "ba1e"
-path = "src/ba1e.rs"
-
-[[bin]]
-name = "ba1f"
-path = "src/ba1f.rs"
-
-[[bin]]
-name = "ba1g"
-path = "src/ba1g.rs"
-
-[[bin]]
-name = "ba1h"
-path = "src/ba1h.rs"
-
-[[bin]]
-name = "ba1i"
-path = "src/ba1i.rs"
-
-[[bin]]
-name = "ba1j"
-path = "src/ba1j.rs"
-
-[[bin]]
-name = "ba2a"
-path = "src/ba2a.rs"
-
-# Commented out until the product iter is properly implemented
-#[[bin]]
-#name = "ba2b"
-#path = "src/ba2b.rs"
+[dev-dependencies]
+assert_cmd = "0.11.1"
+predicates = "1.0.0"
+tempfile = "3.0.7"
 
 [dependencies]
+rand = "0.6.5"

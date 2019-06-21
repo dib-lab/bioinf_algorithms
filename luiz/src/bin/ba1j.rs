@@ -2,7 +2,6 @@ use std::collections::{HashMap, HashSet};
 use std::env;
 use std::error::Error;
 use std::fs;
-use std::iter::FromIterator;
 use std::str;
 
 use bioinformatics_algorithms::{neighbors, revc};
@@ -45,12 +44,9 @@ pub fn frequent_words_with_mismatches_and_rc(text: &[u8], k: usize, d: usize) ->
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    assert_eq!(
-        frequent_words_with_mismatches_and_rc(b"ACGTTGCATGTCGCATGATGCATGAGAGCT", 4, 1),
-        HashSet::from_iter(vec!["ATGT".into(), "ACAT".into()].into_iter())
-    );
-
-    let input: String = env::args().nth(1).expect("Input data file missing");
+    let input: String = env::args()
+        .nth(1)
+        .unwrap_or("data/rosalind_ba1j.txt".into());
     let data = fs::read_to_string(input)?;
     let mut lines = data.lines();
 

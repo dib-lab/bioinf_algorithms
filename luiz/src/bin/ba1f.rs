@@ -33,10 +33,9 @@ pub fn minimum_skew(text: &[u8]) -> Vec<usize> {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    assert_eq!(minimum_skew(b"CCTATCGGTGGATTAGCATGTCCCTGTACGTTTCGCCGCGAACTAGTTCACACGGCTTGATGGCAAATGGTTTTTCCGGCGACCGTAATCGTCCACCGAG"),
-                            vec![53, 97]);
-
-    let input: String = env::args().nth(1).expect("Input data file missing");
+    let input: String = env::args()
+        .nth(1)
+        .unwrap_or("data/rosalind_ba1f.txt".into());
     let data = fs::read_to_string(input)?;
     let mut lines = data.lines();
 

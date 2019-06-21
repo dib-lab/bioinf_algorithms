@@ -38,13 +38,9 @@ pub fn find_clumps(text: &[u8], ksize: usize, length: usize, times: usize) -> Ha
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let v = vec!["CGACA".to_owned(), "GAAGA".to_owned(), "AATGT".to_owned()];
-    let answer: HashSet<String> = v.into_iter().collect();
-    assert_eq!(find_clumps(b"CGGACTCGACAGATGTGAAGAAATGTGAAGACTGAGTGAAGAGAAGAGGAAACACGACACGACATTGCGACATAATGTACGAATGTAATGTGCCTATGGC",
-                           5, 75, 4),
-                           answer);
-
-    let input: String = env::args().nth(1).expect("Input data file missing");
+    let input: String = env::args()
+        .nth(1)
+        .unwrap_or("data/rosalind_ba1e.txt".into());
     let data = fs::read_to_string(input)?;
     let mut lines = data.lines();
 

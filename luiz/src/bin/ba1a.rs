@@ -19,7 +19,9 @@ pub fn pattern_count(text: &str, pattern: &str) -> u64 {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let input: String = env::args().nth(1).expect("Input data file missing");
+    let input: String = env::args()
+        .nth(1)
+        .unwrap_or("data/rosalind_ba1a.txt".into());
     let data = fs::read_to_string(input)?;
     let mut lines = data.lines();
 

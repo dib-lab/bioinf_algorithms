@@ -43,24 +43,9 @@ pub fn motif_enumeration(text: Vec<String>, k: usize, d: usize) -> HashSet<Strin
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    assert_eq!(
-        motif_enumeration(
-            vec![
-                "ATTTGGC".into(),
-                "TGCCTTA".into(),
-                "CGGTATC".into(),
-                "GAAAATT".into()
-            ],
-            3,
-            1
-        ),
-        ["ATA".into(), "ATT".into(), "GTT".into(), "TTT".into()]
-            .iter()
-            .cloned()
-            .collect()
-    );
-
-    let input: String = env::args().nth(1).expect("Input data file missing");
+    let input: String = env::args()
+        .nth(1)
+        .unwrap_or("data/rosalind_ba2a.txt".into());
     let data = fs::read_to_string(input)?;
     let mut lines = data.lines();
 

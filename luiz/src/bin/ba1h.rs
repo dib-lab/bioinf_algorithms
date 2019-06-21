@@ -19,12 +19,9 @@ pub fn approximate_pattern_matches(text: &[u8], pattern: &str, distance: usize) 
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    assert_eq!(
-        approximate_pattern_matches(b"CGCCCGAATCCAGAACGCATTCCCATATTTCGGGACCACTGGCCTCCACGGTACGGACGTCAATCAAATGCCTAGCGGCTTGTGGTTTCTCCTACGCTCC", "ATTCTGGA", 3),
-        vec![6, 7, 26, 27, 78]
-    );
-
-    let input: String = env::args().nth(1).expect("Input data file missing");
+    let input: String = env::args()
+        .nth(1)
+        .unwrap_or("data/rosalind_ba1h.txt".into());
     let data = fs::read_to_string(input)?;
     let mut lines = data.lines();
 

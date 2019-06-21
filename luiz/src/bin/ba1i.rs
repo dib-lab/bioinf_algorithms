@@ -34,12 +34,9 @@ pub fn frequent_words_with_mismatches(text: &[u8], k: usize, d: usize) -> Vec<St
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    assert_eq!(
-        frequent_words_with_mismatches(b"AACAAGCTGATAAACATTTAAAGAG", 5, 1),
-        vec!["AAAAA"]
-    );
-
-    let input: String = env::args().nth(1).expect("Input data file missing");
+    let input: String = env::args()
+        .nth(1)
+        .unwrap_or("data/rosalind_ba1i.txt".into());
     let data = fs::read_to_string(input)?;
     let mut lines = data.lines();
 

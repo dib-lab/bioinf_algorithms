@@ -29,7 +29,9 @@ pub fn frequent_words(text: &[u8], k: usize) -> Vec<String> {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let input: String = env::args().nth(1).expect("Input data file missing");
+    let input: String = env::args()
+        .nth(1)
+        .unwrap_or("data/rosalind_ba1b.txt".into());
     let data = fs::read_to_string(input)?;
     let mut lines = data.lines();
 

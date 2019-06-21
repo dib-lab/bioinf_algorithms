@@ -17,9 +17,9 @@ pub fn pattern_matches(text: &[u8], pattern: &str) -> Vec<usize> {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    assert_eq!(pattern_matches(b"GATATATGCATATACTT", "ATAT"), vec![1, 3, 9]);
-
-    let input: String = env::args().nth(1).expect("Input data file missing");
+    let input: String = env::args()
+        .nth(1)
+        .unwrap_or("data/rosalind_ba1d.txt".into());
     let data = fs::read_to_string(input)?;
     let mut lines = data.lines();
 
